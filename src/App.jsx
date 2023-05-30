@@ -5,6 +5,7 @@ import Income from "./components/Income.jsx";
 import Expense from "./components/Expense.jsx";
 import Balance from "./components/Balance.jsx";
 import Total from "./components/Total.jsx";
+import AddTransaction from "./components/AddTransaction.jsx";
 // import dotenv from "dotenv";
 
 function App() {
@@ -18,8 +19,8 @@ function App() {
     date: today.toLocaleDateString(),
     description: "Monthly salary",
   };
-
   const inputRef = useRef(null);
+
   const categoryRef = useRef("Expense");
   const [data, setData] = useState(Data);
   console.log(data);
@@ -28,9 +29,9 @@ function App() {
     e.preventDefault();
     const amount = Number(inputRef.current.value);
     if (amount && amount > 0) {
-      newTransaction.category = categoryRef.current.value;
+      newTransaction.category = categoryRef.current;
       newTransaction.amount = amount;
-      console.log(newTransaction);
+      // console.log(newTransaction);
       setData({
         ...data,
         transactions: [...data.transactions, newTransaction],
@@ -39,8 +40,8 @@ function App() {
   }
 
   function handleCategoryChange(e) {
-    categoryRef.current.value = e.target.value;
-    console.log(categoryRef.current.value);
+    categoryRef.current = e.target.value;
+    console.log(categoryRef.current);
   }
 
   return (
@@ -54,28 +55,11 @@ function App() {
           <Total data={data} />
         </div>
 
-        <div>
-          <label htmlFor="input">Enter Amount</label>
-          <input ref={inputRef} type="number" name="input" />
-          <button onClick={(e) => hanleSubmit(e)}>Add</button>
-          <div ref={categoryRef}>
-            <input
-              type="radio"
-              name="category"
-              value="Expense"
-              defaultChecked
-              onClick={(e) => handleCategoryChange(e)}
-            />
-            <label htmlFor="expense">Expense</label>
-            <input
-              type="radio"
-              name="category"
-              value="Income"
-              onClick={(e) => handleCategoryChange(e)}
-            />
-            <label htmlFor="income">Income</label>
-          </div>
-        </div>
+        <AddTransaction
+          ref={inputRef}
+          oncategoryChange={handleCategoryChange}
+          onSubmit={hanleSubmit}
+        />
       </section>
     </>
   );
