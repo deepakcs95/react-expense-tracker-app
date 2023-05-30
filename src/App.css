@@ -1,0 +1,25 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: stretch;
+  text-align: center;
+}
+
+.transaction-card {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+}
+
+.transaction-card > * {
+  display: grid;
+  place-content: center;
+  border: 1px solid yellow;
+}
+
+.transaction-input {
+  border: 1px solid red;
+}
+.transaction-input * {
+  padding-block: 0.31rem;
+}

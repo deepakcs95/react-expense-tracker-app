@@ -1,0 +1,40 @@
+{
+  "transactions": [
+    {
+      "id": "1",
+      "amount": 1100.0,
+      "category": "Expense",
+      "type": "Food",
+      "date": "2023-05-29",
+      "description": "Lunch at a restaurant"
+    },
+    {
+      "id": "2",
+      "amount": 500.0,
+      "category": "Expense",
+      "type": "Transportation",
+      "date": "2023-05-28",
+      "description": "Metro fare"
+    },
+    {
+      "id": "3",
+      "amount": 1000.0,
+      "category": "Income",
+      "type": "Salary",
+      "date": "2023-05-25",
+      "description": "Monthly salary"
+    },
+    {
+      "id": "6",
+      "amount": 1000.0,
+      "category": "Income",
+      "type": "Salary",
+      "date": "2023-05-25",
+      "description": "Monthly salary"
+    }
+  ],
+  "categories": {
+    "Expense": ["Food", "Transportation", "Utilities", "Entertainment", "Others"],
+    "Income": ["Salary", "Freelancing", "Investments", "Gifts", "Others"]
+  }
+}
