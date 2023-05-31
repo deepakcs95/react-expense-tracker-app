@@ -1,9 +1,13 @@
-const Expense = ({ data }) => {
+import { GlobalContext } from "../Context/GlobalContext";
+import { useContext } from "react";
+
+const Expense = () => {
   // console.log("expense");
+  const state = useContext(GlobalContext);
 
   const expenseFunction = () => {
     let TotalExpense = 0;
-    data.transactions.forEach((transaction) => {
+    state.transactions.forEach((transaction) => {
       if (transaction.category === "Expense") {
         TotalExpense += transaction.amount;
       }

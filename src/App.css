@@ -30,8 +30,15 @@
   display: grid;
   margin: 5px;
   border-radius: 2px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.transaction-list button {
+  width: fit-content;
+  background: none;
   cursor: pointer;
+  border-radius: 3px;
+  justify-self: center;
 }
 
 .income {

@@ -1,5 +1,10 @@
-const Total = ({ data }) => {
-  const totalTransaction = data.transactions.length;
+import { GlobalContext } from "../Context/GlobalContext";
+import { useContext } from "react";
+
+const Total = () => {
+  const state = useContext(GlobalContext);
+
+  const totalTransaction = state.transactions.length;
 
   return (
     <div>

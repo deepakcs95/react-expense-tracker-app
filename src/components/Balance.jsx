@@ -1,9 +1,14 @@
-const Balance = ({ data }) => {
-  const balance = incomeAndExpense(data);
+import { GlobalContext } from "../Context/GlobalContext";
+import { useContext } from "react";
+
+const Balance = () => {
+  const state = useContext(GlobalContext);
+
+  const balance = incomeAndExpense(state);
   return (
     <div>
       <h2>$ {balance}</h2>
-      <p>Blance</p>
+      <p>Balance</p>
     </div>
   );
 };

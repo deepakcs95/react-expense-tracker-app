@@ -1,8 +1,11 @@
-import { forwardRef, useRef, useState } from "react";
+import { forwardRef, useRef, useState, useContext } from "react";
+import { GlobalContext } from "../Context/GlobalContext";
 
-const AddTransaction = forwardRef(({ oncategoryChange, onSubmit, type }, ref) => {
+const AddTransaction = forwardRef(({ oncategoryChange, onSubmit }, ref) => {
   const typeRef = useRef(null);
   const [typeofTransaction, setType] = useState("Expense");
+  const state = useContext(GlobalContext);
+
   return (
     <div className="transaction-input">
       <form action="">
@@ -28,7 +31,6 @@ const AddTransaction = forwardRef(({ oncategoryChange, onSubmit, type }, ref) =>
               setType("Expense");
             }}
           />
-
           <label htmlFor="expense">Expense</label>
           <input
             type="radio"
@@ -43,7 +45,7 @@ const AddTransaction = forwardRef(({ oncategoryChange, onSubmit, type }, ref) =>
           <label htmlFor="income">Income</label>
         </div>
         <select ref={typeRef} name="type" id="type" required>
-          {type[typeofTransaction].map((item) => (
+          {state.categories[typeofTransaction].map((item) => (
             <option key={Math.random() * 100}>{item}</option>
           ))}
         </select>

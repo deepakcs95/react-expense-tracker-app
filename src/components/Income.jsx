@@ -1,7 +1,12 @@
-const Income = ({ data }) => {
+import { GlobalContext } from "../Context/GlobalContext";
+import { useContext } from "react";
+
+const Income = () => {
+  const state = useContext(GlobalContext);
+
   const incomeFunction = () => {
     let Totalincome = 0;
-    data.transactions.forEach((transaction) => {
+    state.transactions.forEach((transaction) => {
       if (transaction.category === "Income") {
         Totalincome += transaction.amount;
       }
@@ -9,6 +14,7 @@ const Income = ({ data }) => {
     return Totalincome;
   };
 
+  // const income = "incomeFunction()";
   const income = incomeFunction();
 
   return (
