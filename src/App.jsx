@@ -77,7 +77,7 @@ function App() {
   return (
     <section className="card">
       <GlobalContext.Provider value={state}>
-        <h1>expense tracker</h1>
+        <h1>Expense Tracker</h1>
         <div className="transaction-card">
           <Income />
           <Expense />

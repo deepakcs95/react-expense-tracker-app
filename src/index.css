@@ -38,10 +38,10 @@ dd {
   align-items: center;
   justify-content: center;
   overflow-y: scroll;
+  background-color: rgb(255, 244, 210);
 }
 
 .card {
-  border: 1px solid black;
   width: max(400px, 70%);
   border-radius: 10px;
 }

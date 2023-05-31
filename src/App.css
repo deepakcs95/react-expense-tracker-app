@@ -1,29 +1,67 @@
 .card {
+  background-color: rgb(255, 227, 227);
+  border: 2px solid black;
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: stretch;
   text-align: center;
+  box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.42);
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.22);
 }
 
 .transaction-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  padding: 5px 5px;
 }
 
 .transaction-card > * {
   display: grid;
   place-content: center;
-  border: 1px solid yellow;
+  border-radius: 13px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 7px 1px 4px 0px rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow: 7px 1px 4px 0px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 7px 1px 4px 0px rgba(0, 0, 0, 0.12);
 }
 
-.transaction-input {
-  border: 1px solid red;
-}
 .transaction-input * {
   padding-block: 0.31rem;
 }
 
+.transaction-input .text-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-inline: 20px;
+}
+
+.transaction-input .text-input > button {
+  background: white;
+  padding: 0.3rem 0.9rem;
+  border-radius: 4px;
+}
+
+.transaction-input .category-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transaction-input .category-input * {
+  padding-inline: 10px;
+}
+
+.transaction-input .text-input > label {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.transaction-input .text-input > input {
+  padding-inline: 10px;
+}
 .transaction-list {
   background-color: lightsalmon;
   padding: 0.2rem 0.3rem;
